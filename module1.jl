@@ -73,11 +73,6 @@ md"""
 **E-mail:** [juliohm@arpeggeo.tech](mailto:juliohm@arpeggeo.tech)
 """
 
-# ╔═╡ bf71c2de-ae71-48b1-ba6d-3adf284ff3e6
-html"""
-<img src="https://github.com/JuliaEarth/GeoStats.jl/blob/master/docs/src/assets/logo-text.svg?raw=true">
-"""
-
 # ╔═╡ db5cef13-5089-4039-a1dd-20292a82af5e
 html"""
 <head>
@@ -390,7 +385,7 @@ hint(md"Basta escrever uma sequência de `if name == \"diamond\" return \"💎\"
 
 # ╔═╡ 54777db4-a19e-4c04-9da7-a8e14b2c5494
 md"""
-## Dados tabulares 📋💿
+## Dados tabulares 📑
 
 Investigaremos o conjunto de dados [GeoMet](https://zenodo.org/record/7051975) curado em parceria com a Vale.
 
@@ -562,7 +557,7 @@ combine(groups, "Au ppm" => sum => "Total")
 
 # ╔═╡ 9cc5c401-8a3d-443a-a55a-ee4a2b750e5d
 md"""
-## Perguntas?
+## Perguntas? 🔍
 
 No próximo módulo do minicurso aprenderemos a lidar com dados geoespaciais utilizando o framework [GeoStats.jl](https://juliaearth.github.io/GeoStats.jl/stable). Se algo não ficou claro neste primeiro módulo, não hesite em perguntar!
 
@@ -1081,7 +1076,6 @@ version = "17.4.0+0"
 # ╟─b519490a-ef45-4816-9d03-c9cf765dedef
 # ╟─4f97ab93-077b-4a77-9b02-0930f765c4aa
 # ╟─66387fc3-d61f-4558-9b35-b812176dc7d7
-# ╟─bf71c2de-ae71-48b1-ba6d-3adf284ff3e6
 # ╟─db5cef13-5089-4039-a1dd-20292a82af5e
 # ╟─d54bab7b-61ea-49a1-b745-865f5638e442
 # ╟─63f75b8c-be98-4782-b549-42dc4eb34622
