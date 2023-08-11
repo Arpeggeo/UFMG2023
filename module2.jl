@@ -20,6 +20,7 @@ begin
 
 	# import Makie's WebGL backend
 	import WGLMakie as Mke
+	Mke.set_theme!(Mke.theme_black())
 
 	# add table of contents to the side
 	PlutoUI.TableOfContents(title="Contents")
@@ -69,7 +70,20 @@ opacity: .8;
 body {
 overflow-x: hidden;
 }
-</style>"""
+</style>
+
+<style>
+	@media screen {
+		main {
+			margin: 0 auto;
+			max-width: 2000px;
+    		padding-left: max(383px, 25%);
+    		padding-right: max(383px, 25%); 
+            # 383px to accomodate TableOfContents(aside=true)
+		}
+	}
+</style>
+"""
 
 # ╔═╡ b1ab2284-26fb-43be-9174-a5429e23f609
 md"""
@@ -168,7 +182,7 @@ Podemos assumir que as amostras estão associadas a pontos aleatórios no espaç
 pointdata = georef(table, rand(Point3, 1000))
 
 # ╔═╡ c6bc606b-c39a-4d78-aab8-6c6b3dd6e5c0
-viz(pointdata.geometry, color = pointdata.a)
+pointdata |> viewer
 
 # ╔═╡ 304ce365-44a4-491d-86f1-2e0aa8df3fb1
 md"""
@@ -179,7 +193,7 @@ De forma alternativa, podemos associar essas amostras a blocos em um modelo de b
 griddata = georef(table, CartesianGrid(10, 10, 10))
 
 # ╔═╡ 86cbf794-d6b0-459b-83c8-0f019b09110e
-viz(griddata.geometry, color = griddata.a)
+griddata |> viewer
 
 # ╔═╡ eb6dc67f-e7e3-4dc4-b061-8fa7d7ee8cb3
 md"""
@@ -467,7 +481,7 @@ Estamos prontos para começar a geociência de dados agora que temos todos os bl
 """
 
 # ╔═╡ f0510e72-c2a2-43f8-a7b2-aaf69462c288
-viz(blocks.geometry, color = blocks.Au)
+blocks |> viewer
 
 # ╔═╡ bded048b-f62a-4440-a58f-f634522469b3
 md"""
@@ -546,7 +560,7 @@ Podemos visualizar esse novo atributo em cada grupo de geometrias ou "subdomíni
 """
 
 # ╔═╡ 8824a62c-f3c3-4055-961e-52fa7d0761f8
-# viz(mined.geometry, color = mined.mass)
+# mined |> viewer
 
 # ╔═╡ 14f6fa6d-737a-417f-982c-d59e9d5b959a
 md"""
@@ -577,7 +591,7 @@ WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 [compat]
 CSV = "~0.10.11"
 DataFrames = "~1.6.1"
-GeoStats = "~0.42.1"
+GeoStats = "~0.42.3"
 PlutoTeachingTools = "~0.2.12"
 PlutoUI = "~0.7.52"
 WGLMakie = "~0.8.11"
@@ -589,7 +603,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "019eaa9863fd9d90c86013861b21b47b5db20fdd"
+project_hash = "29c52dfce6349a98fecbc7fff8ee620c39b64f93"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -817,9 +831,9 @@ version = "1.0.8"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "a1311bb989badecfef02feafff5c287677a990dd"
+git-tree-sha1 = "a1296f0fe01a4c3f9bf0dc2934efbf4416f5db31"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.3.3"
+version = "1.3.4"
 
 [[deps.CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -1240,10 +1254,10 @@ uuid = "cf35fbd7-0cd7-5166-be24-54bfbe79505f"
 version = "1.3.1"
 
 [[deps.GeoStats]]
-deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "TableTransforms", "Unitful", "Variography"]
-git-tree-sha1 = "77e94a6ffc4dabde59c2e6aead27e90214ee53c9"
+deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "TableTransforms", "Tables", "Unitful", "Variography"]
+git-tree-sha1 = "32355436a30d3a163dfd5f245e658df374d7926e"
 uuid = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
-version = "0.42.1"
+version = "0.42.3"
 weakdeps = ["Makie"]
 
     [deps.GeoStats.extensions]
@@ -1495,9 +1509,9 @@ version = "2.1.91+0"
 
 [[deps.JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
-git-tree-sha1 = "6a125e6a4cb391e0b9adbd1afa9e771c2179f8ef"
+git-tree-sha1 = "e8ab063deed72e14666f9d8af17bd5f9eab04392"
 uuid = "aa1ae85d-cabe-5617-a682-6adf51b2e16a"
-version = "0.9.23"
+version = "0.9.24"
 
 [[deps.KernelDensity]]
 deps = ["Distributions", "DocStringExtensions", "FFTW", "Interpolations", "StatsBase"]
@@ -1750,9 +1764,9 @@ version = "2.28.2+0"
 
 [[deps.Meshes]]
 deps = ["Bessels", "CircularArrays", "Distances", "LinearAlgebra", "NearestNeighbors", "Random", "Rotations", "SparseArrays", "StaticArrays", "StatsBase", "Tables", "TransformsBase"]
-git-tree-sha1 = "8caf86c13636511adbcb63cc965ffa8a7c1bfa3c"
+git-tree-sha1 = "abad770f1588a56392820984c8c648b90b645f45"
 uuid = "eacbb407-ea5a-433e-ab97-5258b1ca43fa"
-version = "0.34.7"
+version = "0.34.9"
 weakdeps = ["Makie"]
 
     [deps.Meshes.extensions]
