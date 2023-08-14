@@ -514,14 +514,14 @@ Salve o resultado na variável `q1`:
 """
 
 # ╔═╡ 9ef6a603-a46b-4073-a9c7-1ce3fedd2079
-q1 = df[df."Au ppm" .+ df."Cu ppm" .> 0.5, :]
+res = missing
 
 # ╔═╡ 1173edca-db9d-4642-bfe5-fc50cc745f8e
 begin
 	scored5 = false
-	if ismissing(q1)
+	if ismissing(res)
 		still_missing()
-	elseif q1 == df[df."Au ppm" .+ df."Cu ppm" .> 0.5, :]
+	elseif res == df[df."Au ppm" .+ df."Cu ppm" .> 0.5, :]
 		scored5 = true
 		correct()
 	else
