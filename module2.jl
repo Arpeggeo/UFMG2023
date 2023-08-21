@@ -89,7 +89,7 @@ overflow-x: hidden;
 md"""
 # Módulo II
 
-**Instructor:** [Júlio Hoffimann](https://juliohm.github.io)
+**Instrutor:** [Júlio Hoffimann](https://juliohm.github.io)
 **E-mail:** [juliohm@arpeggeo.tech](mailto:juliohm@arpeggeo.tech)
 """
 
@@ -771,9 +771,9 @@ version = "1.0.5"
 
 [[deps.CairoMakie]]
 deps = ["Base64", "Cairo", "Colors", "FFTW", "FileIO", "FreeType", "GeometryBasics", "LinearAlgebra", "Makie", "PrecompileTools", "SHA"]
-git-tree-sha1 = "e041782fed7614b1726fa250f2bf24fd5c789689"
+git-tree-sha1 = "30562a68ded3dabe80109caf6b4de73a48ac27bc"
 uuid = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
-version = "0.10.7"
+version = "0.10.8"
 
 [[deps.Cairo_jll]]
 deps = ["Artifacts", "Bzip2_jll", "CompilerSupportLibraries_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "JLLWrappers", "LZO_jll", "Libdl", "Pixman_jll", "Pkg", "Xorg_libXext_jll", "Xorg_libXrender_jll", "Zlib_jll", "libpng_jll"]
@@ -1242,9 +1242,9 @@ version = "1.3.1"
 
 [[deps.GeoStats]]
 deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "TableTransforms", "Tables", "Unitful", "Variography"]
-git-tree-sha1 = "3f6015ce06c734db3b3d03ee47015092767bc841"
+git-tree-sha1 = "b59a53bc7cbb0030ca7e8804ceb98ce79e0a7631"
 uuid = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
-version = "0.43.0"
+version = "0.43.3"
 weakdeps = ["Makie"]
 
     [deps.GeoStats.extensions]
@@ -1258,9 +1258,9 @@ version = "0.33.0"
 
 [[deps.GeoStatsSolvers]]
 deps = ["Bessels", "CpuId", "Distances", "Distributions", "FFTW", "GeoStatsBase", "KrigingEstimators", "LinearAlgebra", "MLJModelInterface", "Meshes", "Random", "Statistics", "TableTransforms", "Tables", "Unitful", "Variography"]
-git-tree-sha1 = "ab185e5d4a9fa1919b0a6c9273cde689bad541b8"
+git-tree-sha1 = "e28c48699bf84b3bcaf7d822131a0e03c2d0592b"
 uuid = "50e95529-e670-4fa6-84ad-e28f686cc091"
-version = "0.5.0"
+version = "0.5.1"
 
 [[deps.GeometryBasics]]
 deps = ["EarCut_jll", "Extents", "GeoInterface", "IterTools", "LinearAlgebra", "StaticArrays", "StructArrays", "Tables"]
@@ -1459,10 +1459,10 @@ uuid = "82899510-4779-5014-852e-03e436cf321d"
 version = "1.0.0"
 
 [[deps.JLLWrappers]]
-deps = ["Preferences"]
-git-tree-sha1 = "abc9885a7ca2052a736a600f7fa66209f96506e1"
+deps = ["Artifacts", "Preferences"]
+git-tree-sha1 = "7e5d6779a1e09a36db2a7b6cff50942a0a7d0fca"
 uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
-version = "1.4.1"
+version = "1.5.0"
 
 [[deps.JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -1525,20 +1525,16 @@ version = "1.3.0"
 
 [[deps.Latexify]]
 deps = ["Formatting", "InteractiveUtils", "LaTeXStrings", "MacroTools", "Markdown", "OrderedCollections", "Printf", "Requires"]
-git-tree-sha1 = "8c57307b5d9bb3be1ff2da469063628631d4d51e"
+git-tree-sha1 = "f428ae552340899a935973270b8d98e5a31c49fe"
 uuid = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
-version = "0.15.21"
+version = "0.16.1"
 
     [deps.Latexify.extensions]
     DataFramesExt = "DataFrames"
-    DiffEqBiologicalExt = "DiffEqBiological"
-    ParameterizedFunctionsExt = "DiffEqBase"
     SymEngineExt = "SymEngine"
 
     [deps.Latexify.weakdeps]
     DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-    DiffEqBase = "2b5f629d-d688-5b77-993f-72d75c75574e"
-    DiffEqBiological = "eb300fae-53e8-50a0-950c-e21f52c2b7e0"
     SymEngine = "123dc426-2d89-5057-bbad-38513e3affd8"
 
 [[deps.LazyArtifacts]]
@@ -1632,9 +1628,9 @@ version = "0.1.12"
 
 [[deps.LogExpFunctions]]
 deps = ["DocStringExtensions", "IrrationalConstants", "LinearAlgebra"]
-git-tree-sha1 = "c3ce8e7420b3a6e071e0fe4745f5d4300e37b13f"
+git-tree-sha1 = "5ab83e1679320064c29e8973034357655743d22d"
 uuid = "2ab3a3ac-af41-5b50-aa03-7779005ae688"
-version = "0.3.24"
+version = "0.3.25"
 
     [deps.LogExpFunctions.extensions]
     LogExpFunctionsChainRulesCoreExt = "ChainRulesCore"
@@ -1678,9 +1674,9 @@ version = "2023.2.0+0"
 
 [[deps.MLJModelInterface]]
 deps = ["Random", "ScientificTypesBase", "StatisticalTraits"]
-git-tree-sha1 = "c8b7e632d6754a5e36c0d94a4b466a5ba3a30128"
+git-tree-sha1 = "03ae109be87f460fe3c96b8a0dbbf9c7bf840bd5"
 uuid = "e80e1ace-859a-464e-9ed9-23947d8ae3ea"
-version = "1.8.0"
+version = "1.9.2"
 
 [[deps.MacroTools]]
 deps = ["Markdown", "Random"]
@@ -1690,15 +1686,15 @@ version = "0.5.10"
 
 [[deps.Makie]]
 deps = ["Animations", "Base64", "ColorBrewer", "ColorSchemes", "ColorTypes", "Colors", "Contour", "DelaunayTriangulation", "Distributions", "DocStringExtensions", "Downloads", "FFMPEG", "FileIO", "FixedPointNumbers", "Formatting", "FreeType", "FreeTypeAbstraction", "GeometryBasics", "GridLayoutBase", "ImageIO", "InteractiveUtils", "IntervalSets", "Isoband", "KernelDensity", "LaTeXStrings", "LinearAlgebra", "MacroTools", "MakieCore", "Markdown", "Match", "MathTeXEngine", "Observables", "OffsetArrays", "Packing", "PlotUtils", "PolygonOps", "PrecompileTools", "Printf", "REPL", "Random", "RelocatableFolders", "Setfield", "ShaderAbstractions", "Showoff", "SignedDistanceFields", "SparseArrays", "StableHashTraits", "Statistics", "StatsBase", "StatsFuns", "StructArrays", "TriplotBase", "UnicodeFun"]
-git-tree-sha1 = "729640354756782c89adba8857085a69e19be7ab"
+git-tree-sha1 = "e81675589ba7199a82443e87fc52e17eeceac2e8"
 uuid = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
-version = "0.19.7"
+version = "0.19.8"
 
 [[deps.MakieCore]]
 deps = ["Observables"]
-git-tree-sha1 = "87a85ff81583bd392642869557cb633532989517"
+git-tree-sha1 = "f56b09c8b964919373d61750c6d8d4d2c602a2be"
 uuid = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
-version = "0.6.4"
+version = "0.6.5"
 
 [[deps.MappedArrays]]
 git-tree-sha1 = "2dab0221fe2b0f2cb6754eaa743cc266339f527e"
@@ -1856,9 +1852,9 @@ version = "0.5.5+0"
 
 [[deps.Optim]]
 deps = ["Compat", "FillArrays", "ForwardDiff", "LineSearches", "LinearAlgebra", "NLSolversBase", "NaNMath", "Parameters", "PositiveFactorizations", "Printf", "SparseArrays", "StatsBase"]
-git-tree-sha1 = "e3a6546c1577bfd701771b477b794a52949e7594"
+git-tree-sha1 = "963b004d15216f8129f6c0f7d187efa136570be0"
 uuid = "429524aa-4258-5aef-a3af-852621145aeb"
-version = "1.7.6"
+version = "1.7.7"
 
 [[deps.Opus_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -1961,9 +1957,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "45f9e1b6f62a006a585885f5eb13fc22554a8865"
+git-tree-sha1 = "542de5acb35585afcf202a6d3361b430bc1c3fbd"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.12"
+version = "0.2.13"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -2392,9 +2388,9 @@ version = "1.0.1"
 
 [[deps.TableTransforms]]
 deps = ["AbstractTrees", "CategoricalArrays", "Distributions", "LinearAlgebra", "NelderMead", "PrettyTables", "Random", "ScientificTypes", "Statistics", "StatsBase", "Tables", "Transducers", "TransformsBase"]
-git-tree-sha1 = "c1b2e99b13c9e30d0d346b974e99e2faa6a398e0"
+git-tree-sha1 = "d2fc117cc24ad1e459c9ff9d839e201431ec608a"
 uuid = "0d432bfd-3ee1-4ac1-886a-39f05cc69a3e"
-version = "1.9.3"
+version = "1.10.0"
 
 [[deps.Tables]]
 deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "LinearAlgebra", "OrderedCollections", "TableTraits", "Test"]
@@ -2515,9 +2511,9 @@ version = "1.16.3"
 
 [[deps.Variography]]
 deps = ["Bessels", "Distances", "GeoStatsBase", "InteractiveUtils", "LinearAlgebra", "Meshes", "NearestNeighbors", "Optim", "Printf", "Random", "Setfield", "Tables", "Transducers", "Unitful"]
-git-tree-sha1 = "74985cb2282802c8c46bd196e66d7ea6f1bcf1b2"
+git-tree-sha1 = "7187c7af2b740d0e852936427de7e75a5eb871a7"
 uuid = "04a0146e-e6df-5636-8d7f-62fa9eb0b20c"
-version = "0.17.4"
+version = "0.17.5"
 
 [[deps.WeakRefStrings]]
 deps = ["DataAPI", "InlineStrings", "Parsers"]
