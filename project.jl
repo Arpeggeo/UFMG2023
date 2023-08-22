@@ -208,7 +208,7 @@ Com base na tabela de cominuição (i.e. `cfile`), calcule o "Bond Work Index" (
 
 $BWI = \frac{49.0}{A^{0.23} M^{0.82} \left(\frac{10.0}{\sqrt{P80}} - \frac{10.0}{\sqrt{F80}}\right)}$
 
-Esse índice permite localizar amostras que demandam mais energia para serem "quebradas" na usina.
+Esse índice permite localizar amostras que demandam mais energia para serem fragmentadas na usina.
 
 Destaque no espaço as amostras com maior e menor BWI utilizando cores distintas a seu critério:
 """
@@ -218,7 +218,7 @@ Destaque no espaço as amostras com maior e menor BWI utilizando cores distintas
 
 # ╔═╡ 716edf0d-317a-45ed-96a9-05449bf9f55b
 md"""
-Com essa nova informação, crie grupos de amostras com baixo, médio e alto BWI, e calcule a concentração média de `S ppm` dentro de cada grupo. Visualize os grupos com cores representando essa concentração média:
+Com essa nova informação, crie grupos de amostras com baixo, médio e alto BWI, e calcule a concentração média de `Si ppm` dentro de cada grupo. Visualize os grupos com cores representando essa concentração média:
 """
 
 # ╔═╡ 4f8cb022-9541-4544-bb88-ffc4e5fbbbd3
