@@ -559,14 +559,11 @@ md"""
 Podemos visualizar esse novo atributo em cada grupo de geometrias ou "subdomínio" produzido. Basta descomentar a linha abaixo quando tiver a resposta certa.
 """
 
-# ╔═╡ 8824a62c-f3c3-4055-961e-52fa7d0761f8
-# mined |> viewer
-
 # ╔═╡ 14f6fa6d-737a-417f-982c-d59e9d5b959a
 md"""
 ## Recursos adicionais
 
-O GeoStats.jl é o framework para geociência de dados e modelagem geospacial mais poderoso do mercado. Além de uma **comunidade internacional** cada vez mais engajada, ele está sendo utilizado em projetos reais com a indústria e é totalmente **gratuito**.
+O GeoStats.jl é o framework para geociência de dados e modelagem geospacial mais poderoso da atualidade. Além de uma **comunidade internacional** cada vez mais engajada, ele está sendo utilizado em projetos reais com a indústria e é totalmente **gratuito**.
 
 A [Arpeggeo®](https://arpeggeo.tech) constroe soluções avançadas utilizando o framework. Entre em contato conosco caso precise de uma solução de geomodelagem customizada para os desafios na sua empresa:
 """
