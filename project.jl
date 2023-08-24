@@ -618,10 +618,15 @@ version = "3.3.10+0"
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FillArrays]]
-deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "048dd3d82558759476cff9cff999219216932a08"
+deps = ["LinearAlgebra", "Random"]
+git-tree-sha1 = "a20eaa3ad64254c61eeb5f230d9306e937405434"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "1.6.0"
+version = "1.6.1"
+weakdeps = ["SparseArrays", "Statistics"]
+
+    [deps.FillArrays.extensions]
+    FillArraysSparseArraysExt = "SparseArrays"
+    FillArraysStatisticsExt = "Statistics"
 
 [[deps.FiniteDiff]]
 deps = ["ArrayInterface", "LinearAlgebra", "Requires", "Setfield", "SparseArrays"]
@@ -666,10 +671,10 @@ uuid = "7472b188-6dde-460e-bd07-96c4bc049f7e"
 version = "0.4.2"
 
 [[deps.GeoStats]]
-deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "TableTransforms", "Tables", "Unitful", "Variography"]
-git-tree-sha1 = "2908852bea9fcde40120280aba1f527d5f4a93a0"
+deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "Statistics", "TableTransforms", "Tables", "Unitful", "Variography"]
+git-tree-sha1 = "dc1327def88c2f8f181690d77ffd35595c22e59f"
 uuid = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
-version = "0.43.4"
+version = "0.43.5"
 
     [deps.GeoStats.extensions]
     GeoStatsMakieExt = "Makie"
@@ -814,9 +819,9 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[deps.LossFunctions]]
 deps = ["Markdown", "Requires", "Statistics"]
-git-tree-sha1 = "c2b72b61d2e3489b1f9cae3403226b21ec90c943"
+git-tree-sha1 = "df9da07efb9b05ca7ef701acec891ee8f73c99e2"
 uuid = "30fc2ffe-d236-52d8-8643-a9d8f7c094a7"
-version = "0.11.0"
+version = "0.11.1"
 weakdeps = ["CategoricalArrays"]
 
     [deps.LossFunctions.extensions]
@@ -1265,9 +1270,9 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
 [[deps.Unitful]]
 deps = ["Dates", "LinearAlgebra", "Random"]
-git-tree-sha1 = "607c142139151faa591b5e80d8055a15e487095b"
+git-tree-sha1 = "a72d22c7e13fe2de562feda8645aa134712a87ee"
 uuid = "1986cc42-f94f-5a68-af5c-568840ba703d"
-version = "1.16.3"
+version = "1.17.0"
 
     [deps.Unitful.extensions]
     ConstructionBaseUnitfulExt = "ConstructionBase"

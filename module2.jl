@@ -14,12 +14,11 @@ begin
 	PlutoUI.TableOfContents(title="Contents")
 end
 
-# ╔═╡ 1a99560d-cedf-41bf-b1bb-2fbc129a9a03
-begin
-	using GeoStats
-	using Statistics
-	using CSV
-end
+# ╔═╡ ddbd169c-8885-479c-a6f7-4b302889559f
+using GeoStats
+
+# ╔═╡ d486355a-5bf3-465c-9ee3-d752082edfce
+using CSV
 
 # ╔═╡ 5d90f460-6f6e-4af0-b91e-863205115caf
 html"""
@@ -141,11 +140,11 @@ md"""
 Configurações de visualização:
 """
 
+# ╔═╡ 55c43a7e-72af-42ce-9563-79a8d77e6ace
+import CairoMakie as Mke
+
 # ╔═╡ be9e8072-16f7-42d7-a94c-62f7a44dfd5d
-begin
-	import CairoMakie as Mke
-	Mke.set_theme!(Mke.theme_black())
-end
+Mke.set_theme!(Mke.theme_black())
 
 # ╔═╡ 5ece2d2a-03d7-47e9-83d6-558ac490a3dc
 md"""
@@ -593,10 +592,11 @@ CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 GeoStats = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 CSV = "~0.10.11"
+CairoMakie = "~0.10.8"
+GeoStats = "~0.43.5"
 PlutoTeachingTools = "~0.2.12"
 PlutoUI = "~0.7.52"
 """
@@ -607,7 +607,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "bdd97f718b23393145c652175a1552ed6a25467d"
+project_hash = "164744fbc60df0e860c07302146f2fe452d30b91"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -1151,10 +1151,15 @@ version = "0.9.20"
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FillArrays]]
-deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "048dd3d82558759476cff9cff999219216932a08"
+deps = ["LinearAlgebra", "Random"]
+git-tree-sha1 = "a20eaa3ad64254c61eeb5f230d9306e937405434"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "1.6.0"
+version = "1.6.1"
+weakdeps = ["SparseArrays", "Statistics"]
+
+    [deps.FillArrays.extensions]
+    FillArraysSparseArraysExt = "SparseArrays"
+    FillArraysStatisticsExt = "Statistics"
 
 [[deps.FiniteDiff]]
 deps = ["ArrayInterface", "LinearAlgebra", "Requires", "Setfield", "SparseArrays"]
@@ -1247,10 +1252,10 @@ uuid = "cf35fbd7-0cd7-5166-be24-54bfbe79505f"
 version = "1.3.1"
 
 [[deps.GeoStats]]
-deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "TableTransforms", "Tables", "Unitful", "Variography"]
-git-tree-sha1 = "2908852bea9fcde40120280aba1f527d5f4a93a0"
+deps = ["CategoricalArrays", "Chain", "Dates", "DensityRatioEstimation", "Distances", "GeoClustering", "GeoStatsBase", "GeoStatsSolvers", "KrigingEstimators", "LossFunctions", "Meshes", "PointPatterns", "Reexport", "Rotations", "ScientificTypes", "Statistics", "TableTransforms", "Tables", "Unitful", "Variography"]
+git-tree-sha1 = "dc1327def88c2f8f181690d77ffd35595c22e59f"
 uuid = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
-version = "0.43.4"
+version = "0.43.5"
 weakdeps = ["Makie"]
 
     [deps.GeoStats.extensions]
@@ -1648,9 +1653,9 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[deps.LossFunctions]]
 deps = ["Markdown", "Requires", "Statistics"]
-git-tree-sha1 = "c2b72b61d2e3489b1f9cae3403226b21ec90c943"
+git-tree-sha1 = "df9da07efb9b05ca7ef701acec891ee8f73c99e2"
 uuid = "30fc2ffe-d236-52d8-8643-a9d8f7c094a7"
-version = "0.11.0"
+version = "0.11.1"
 weakdeps = ["CategoricalArrays"]
 
     [deps.LossFunctions.extensions]
@@ -2498,9 +2503,9 @@ version = "0.4.1"
 
 [[deps.Unitful]]
 deps = ["Dates", "LinearAlgebra", "Random"]
-git-tree-sha1 = "607c142139151faa591b5e80d8055a15e487095b"
+git-tree-sha1 = "a72d22c7e13fe2de562feda8645aa134712a87ee"
 uuid = "1986cc42-f94f-5a68-af5c-568840ba703d"
-version = "1.16.3"
+version = "1.17.0"
 
     [deps.Unitful.extensions]
     ConstructionBaseUnitfulExt = "ConstructionBase"
@@ -2675,8 +2680,10 @@ version = "3.5.0+0"
 # ╟─3adccc48-7495-4100-874f-df73f92258ac
 # ╟─5562cf70-ebc6-4d76-b0fb-f2375b89ad75
 # ╟─039b1ac5-d0b8-4b86-8202-b665cedd965d
-# ╠═1a99560d-cedf-41bf-b1bb-2fbc129a9a03
+# ╠═ddbd169c-8885-479c-a6f7-4b302889559f
+# ╠═d486355a-5bf3-465c-9ee3-d752082edfce
 # ╟─96040cb9-6b99-4c13-9472-86bd91e52fb7
+# ╠═55c43a7e-72af-42ce-9563-79a8d77e6ace
 # ╠═be9e8072-16f7-42d7-a94c-62f7a44dfd5d
 # ╟─5ece2d2a-03d7-47e9-83d6-558ac490a3dc
 # ╟─edf0cd54-68f9-489a-bcb4-cf0a607623b9
