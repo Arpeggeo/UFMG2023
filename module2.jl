@@ -6,9 +6,10 @@ using InteractiveUtils
 
 # ╔═╡ 063312db-8b30-45a2-aa7d-a4fab7cc2db8
 begin
-	# Pluto packages
+	# auxiliary packages
 	using PlutoTeachingTools
 	import PlutoUI
+	import Tables
 
 	# add table of contents to the side
 	PlutoUI.TableOfContents(title="Contents")
@@ -234,7 +235,7 @@ csv = "https://gist.githubusercontent.com/juliohm/0bc828c9db9d58883855d639f32a64
 md"""
 #### Exercício
 
-Leia a documentação do [georef](https://juliaearth.github.io/GeoStats.jl/stable/data.html) e encontre o método correto para georreferenciar a tabela acima com base nas colunas `EAST`, `NORTH` and `RL`.
+Leia a documentação do [georef](https://juliaearth.github.io/GeoStats.jl/stable/data.html) e encontre o método correto para georreferenciar a tabela `csv` com base nas colunas `EAST`, `NORTH` and `RL`.
 """
 
 # ╔═╡ 562ca1a7-7a81-41ea-92dc-bf5c05db4330
@@ -248,7 +249,7 @@ begin
 		still_missing()
 	elseif a isa Data &&
 	       domain(a) isa PointSet{3} &&
-		   names(values(a) |> DataFrame) == ["Auppm","Agppm","Cuppm","Asppm","Sper","CODE","OX","ISBD"]
+		   Tables.columnnames(values(a)) == [:Auppm, :Agppm, :Cuppm, :Asppm, :Sper, :CODE, :OX, :ISBD]
 		scored1 = true
 		correct()
 	else
@@ -592,6 +593,7 @@ CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 GeoStats = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
+Tables = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
 
 [compat]
 CSV = "~0.10.11"
@@ -599,6 +601,7 @@ CairoMakie = "~0.10.8"
 GeoStats = "~0.43.5"
 PlutoTeachingTools = "~0.2.12"
 PlutoUI = "~0.7.52"
+Tables = "~1.10.1"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -607,7 +610,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "164744fbc60df0e860c07302146f2fe452d30b91"
+project_hash = "c7628a11c38bad988cf32ad309671f85426419c0"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
