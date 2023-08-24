@@ -6,24 +6,23 @@ using InteractiveUtils
 
 # ╔═╡ 063312db-8b30-45a2-aa7d-a4fab7cc2db8
 begin
-	# main package
-	using GeoStats
-
-	# auxiliary packages
-	using CSV
-	using DataFrames
-	using Statistics
-
 	# Pluto packages
 	using PlutoTeachingTools
 	import PlutoUI
 
-	# import Makie's WebGL backend
-	import CairoMakie as Mke
-	Mke.set_theme!(Mke.theme_black())
-
 	# add table of contents to the side
 	PlutoUI.TableOfContents(title="Contents")
+end
+
+# ╔═╡ 1a99560d-cedf-41bf-b1bb-2fbc129a9a03
+begin
+	# pacote principal
+	using GeoStats
+
+	# pacotes auxiliares
+	using DataFrames
+	using Statistics
+	using CSV
 end
 
 # ╔═╡ 5d90f460-6f6e-4af0-b91e-863205115caf
@@ -135,6 +134,25 @@ html"""
 </div>
 </body>
 """
+
+# ╔═╡ 039b1ac5-d0b8-4b86-8202-b665cedd965d
+md"""
+Pacotes utilizados neste módulo:
+"""
+
+# ╔═╡ 96040cb9-6b99-4c13-9472-86bd91e52fb7
+md"""
+Configurações de visualização:
+"""
+
+# ╔═╡ be9e8072-16f7-42d7-a94c-62f7a44dfd5d
+begin
+	# pacote de visualização
+	import CairoMakie as Mke
+
+	# tema padrão das figuras
+	Mke.set_theme!(Mke.theme_black())
+end
 
 # ╔═╡ 5ece2d2a-03d7-47e9-83d6-558ac490a3dc
 md"""
@@ -558,6 +576,9 @@ hint(md"A expressão `volume(:geometry)` pode ser utilizada para calcular volume
 md"""
 Podemos visualizar esse novo atributo em cada grupo de geometrias ou "subdomínio" produzido. Basta descomentar a linha abaixo quando tiver a resposta certa.
 """
+
+# ╔═╡ 2e18638d-4b73-406a-86af-cc711c791a0b
+# mined |> viewer
 
 # ╔═╡ 14f6fa6d-737a-417f-982c-d59e9d5b959a
 md"""
@@ -2670,6 +2691,10 @@ version = "3.5.0+0"
 # ╟─b1ab2284-26fb-43be-9174-a5429e23f609
 # ╟─3adccc48-7495-4100-874f-df73f92258ac
 # ╟─5562cf70-ebc6-4d76-b0fb-f2375b89ad75
+# ╟─039b1ac5-d0b8-4b86-8202-b665cedd965d
+# ╠═1a99560d-cedf-41bf-b1bb-2fbc129a9a03
+# ╟─96040cb9-6b99-4c13-9472-86bd91e52fb7
+# ╠═be9e8072-16f7-42d7-a94c-62f7a44dfd5d
 # ╟─5ece2d2a-03d7-47e9-83d6-558ac490a3dc
 # ╟─edf0cd54-68f9-489a-bcb4-cf0a607623b9
 # ╟─665e42b2-b768-4e85-a546-9ca2d474dd74
@@ -2752,7 +2777,7 @@ version = "3.5.0+0"
 # ╟─80e77630-5d46-4657-a8af-d1bd19201e4e
 # ╟─1849f322-815d-4ad9-ab2f-20ace46b7aa5
 # ╟─945a98ce-7f15-4b54-bb32-7162e08dd563
-# ╠═8824a62c-f3c3-4055-961e-52fa7d0761f8
+# ╠═2e18638d-4b73-406a-86af-cc711c791a0b
 # ╟─14f6fa6d-737a-417f-982c-d59e9d5b959a
 # ╟─3a14cffb-d80f-40da-bfcd-ae50b8944b0e
 # ╟─00000000-0000-0000-0000-000000000001
