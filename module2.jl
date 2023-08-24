@@ -16,11 +16,7 @@ end
 
 # ╔═╡ 1a99560d-cedf-41bf-b1bb-2fbc129a9a03
 begin
-	# pacote principal
 	using GeoStats
-
-	# pacotes auxiliares
-	using DataFrames
 	using Statistics
 	using CSV
 end
@@ -147,10 +143,7 @@ Configurações de visualização:
 
 # ╔═╡ be9e8072-16f7-42d7-a94c-62f7a44dfd5d
 begin
-	# pacote de visualização
 	import CairoMakie as Mke
-
-	# tema padrão das figuras
 	Mke.set_theme!(Mke.theme_black())
 end
 
@@ -189,7 +182,7 @@ Considere a seguinte tabela com `1000` amostras aleatórias de variáveis `a` an
 """
 
 # ╔═╡ 1f7bcf0f-e745-40e3-8b00-1d9cb4394c32
-table = DataFrame(a = rand(1000), b = rand(1000))
+table = (a = rand(1000), b = rand(1000))
 
 # ╔═╡ 7895dfbf-11de-4538-8d9c-58f31eff5859
 md"""
@@ -236,10 +229,7 @@ The Bonnie Project Example is under copyright of Transmin Metallurgical Consulta
 """
 
 # ╔═╡ 39305754-633c-48b1-b177-3f7bbd2b0891
-csv = let
-	url = "https://gist.githubusercontent.com/juliohm/0bc828c9db9d58883855d639f32a6422/raw/94c7fcc57d3b6adac4d8ae31f464648514e928d5/bonnie.csv"
-	CSV.File(download(url))
-end
+csv = "https://gist.githubusercontent.com/juliohm/0bc828c9db9d58883855d639f32a6422/raw/94c7fcc57d3b6adac4d8ae31f464648514e928d5/bonnie.csv" |> download |> CSV.File
 
 # ╔═╡ d6539204-7f9f-4efe-8bc1-806eeb02b024
 md"""
@@ -600,7 +590,6 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
-DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 GeoStats = "dcc97b0b-8ce5-5539-9008-bb190f959ef6"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
@@ -608,7 +597,6 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 CSV = "~0.10.11"
-DataFrames = "~1.6.1"
 PlutoTeachingTools = "~0.2.12"
 PlutoUI = "~0.7.52"
 """
@@ -619,7 +607,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "9a505e6f9751687703efbe7fbba46580e284e9b3"
+project_hash = "bdd97f718b23393145c652175a1552ed6a25467d"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -727,7 +715,6 @@ deps = ["Compat", "ConstructionBase", "InitialValues", "LinearAlgebra", "Require
 git-tree-sha1 = "e28912ce94077686443433c2800104b061a827ed"
 uuid = "198e06fe-97b7-11e9-32a5-e1d131e6ad66"
 version = "0.3.39"
-weakdeps = ["ChainRulesCore", "DataFrames", "StaticArrays", "StructArrays", "TypedTables"]
 
     [deps.BangBang.extensions]
     BangBangChainRulesCoreExt = "ChainRulesCore"
@@ -735,6 +722,13 @@ weakdeps = ["ChainRulesCore", "DataFrames", "StaticArrays", "StructArrays", "Typ
     BangBangStaticArraysExt = "StaticArrays"
     BangBangStructArraysExt = "StructArrays"
     BangBangTypedTablesExt = "TypedTables"
+
+    [deps.BangBang.weakdeps]
+    ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
+    DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+    StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+    StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+    TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
 
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
@@ -962,12 +956,6 @@ version = "4.1.1"
 git-tree-sha1 = "8da84edb865b0b5b0100c0666a9bc9a0b71c553c"
 uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
 version = "1.15.0"
-
-[[deps.DataFrames]]
-deps = ["Compat", "DataAPI", "DataStructures", "Future", "InlineStrings", "InvertedIndices", "IteratorInterfaceExtensions", "LinearAlgebra", "Markdown", "Missings", "PooledArrays", "PrecompileTools", "PrettyTables", "Printf", "REPL", "Random", "Reexport", "SentinelArrays", "SortingAlgorithms", "Statistics", "TableTraits", "Tables", "Unicode"]
-git-tree-sha1 = "04c738083f29f86e62c8afc341f0967d8717bdb8"
-uuid = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-version = "1.6.1"
 
 [[deps.DataStructures]]
 deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
@@ -1449,11 +1437,6 @@ weakdeps = ["Statistics"]
 
     [deps.IntervalSets.extensions]
     IntervalSetsStatisticsExt = "Statistics"
-
-[[deps.InvertedIndices]]
-git-tree-sha1 = "0dc7b50b8d436461be01300fd8cd45aa0274b038"
-uuid = "41ab1584-1d38-5bbf-9106-f11c6c58b48f"
-version = "1.3.0"
 
 [[deps.IrrationalConstants]]
 git-tree-sha1 = "630b497eafcc20001bba38a4651b327dcfc491d2"
