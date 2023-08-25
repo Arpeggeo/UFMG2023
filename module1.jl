@@ -510,7 +510,7 @@ md"""
 
 Encontre todas as amostras onde a soma dos teores de `Au` e `Cu` é superior a `0.5`.
 
-Salve o resultado na variável `q1`:
+Salve o resultado na variável `res`:
 """
 
 # ╔═╡ 9ef6a603-a46b-4073-a9c7-1ce3fedd2079

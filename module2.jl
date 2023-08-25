@@ -355,7 +355,7 @@ hint(md"`Coalesce` e `Coerce` são as transformações que precisa.")
 
 # ╔═╡ ec384065-a8bf-42a2-ac96-9b149fa3ba43
 md"""
-Crie uma pipelien chamada `pipe₂` que
+Crie uma pipeline chamada `pipe₂` que
 
 - seleciona as variáveis `Au`, `Ag`, `Cu`, `As`, `S`
 - realiza uma análise de componentes principais (`PCA`)
